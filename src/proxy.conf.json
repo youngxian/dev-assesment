@@ -1,6 +1,7 @@
 {
-    "/api": {
-        "target": "https://dev-assessment.herokuapp.com",
-        "secure": false
-    }
+  "/api/*": {
+    "target": "https://dev-assessment.herokuapp.com",
+    "secure": false,
+    "logLevel": "debug"
+  }
 }
