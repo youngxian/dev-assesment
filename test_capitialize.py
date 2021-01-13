@@ -59,13 +59,13 @@ class MyTest(TestCase):
         text = self.driver.find_element_by_xpath("/html/body/app-root/section/div[2]/h1").text
         assert text != ""
 
-    def test_user_search(self):
-        self.driver.get(self.url)
-        time.sleep(10)
-        search = self.driver.find_element_by_xpath("/html/body/app-root/section/div[2]/div[2]/div[1]/div[2]/h4").text
-        self.driver.find_element_by_xpath("//*[@id='search']").send_keys(search)
-        time.sleep(10)
-        self.driver.find_element_by_xpath("/html/body/app-root/section/div[2]/div[2]/div/div[2]")
+    # def test_user_search(self):
+    #     self.driver.get(self.url)
+    #     time.sleep(10)
+    #     search = self.driver.find_element_by_xpath("/html/body/app-root/section/div[2]/div[2]/div[1]/div[2]/h4").text
+    #     self.driver.find_element_by_xpath("//*[@id='search']").send_keys(search)
+    #     time.sleep(10)
+    #     self.driver.find_element_by_xpath("/html/body/app-root/section/div[2]/div[2]/div/div[2]")
 
     def tearDown(self):
         self.driver.quit()
