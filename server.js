@@ -1,8 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
-const app = express();
-
+const app = express(cors());
 
 app.use(express.static("./dist/dev-assesment"));
 
@@ -11,4 +10,3 @@ app.get("/*", (req, res) =>
 );
 
 app.listen(process.env.PORT || 8080);
-
