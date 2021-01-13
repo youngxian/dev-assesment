@@ -1,0 +1,250 @@
+<section class="main">
+  <div class="right-side">
+    <p class="greeting">Hello, <span class="username">Emerald</span></p>
+    <p class="subtitle">
+      Welcome to your dashboard, kindly sort through the user base
+    </p>
+    <div class="find">
+      <i class="fa fa-search"></i>
+      <input
+        type="text"
+        name=""
+        id=""
+        class="searchinput"
+        placeholder="Find a user"
+      />
+    </div>
+    <h6 class="show-title">Show Users</h6>
+    <div class="btn-group">
+      <div class="user-btn">
+        <button class="pink" (click)="sortmaleuser('all')">
+          <i class="fa fa-users"></i>
+        </button>
+        <p class="subtitle-btn">All Users</p>
+      </div>
+      <div class="user-btn">
+        <button class="green" (click)="sortmaleuser('male')">
+          <i class="fa fa-male"></i>
+        </button>
+        <p class="subtitle-btn">Male Users</p>
+      </div>
+      <div class="user-btn">
+        <button class="purple" (click)="sortmaleuser('female')">
+          <i class="fa fa-female"></i>
+        </button>
+        <p class="subtitle-btn">Female Users</p>
+      </div>
+    </div>
+  </div>
+  <div class="left-side">
+    <h1>{{ gender }} Users</h1>
+    <p class="filter-title">Filter by</p>
+    <div class="search-filter">
+      <div class="search-box">
+        <input
+          type="text"
+          placeholder="Find in list"
+          id="search"
+          name="search"
+          #mysearch
+          [(ngModel)]="search"
+          (input)="filterItem(Alluser, mysearch.value)"
+        />
+      </div>
+      <select
+        name="countrys"
+        id="countrys"
+        class="country"
+        [(ngModel)]="country"
+      >
+        <!-- <option [ngValue]="Nigeria" selected>Nigeria</option> -->
+        <option [ngValue]="user.location.country" *ngFor="let user of Alluser">
+          {{ user.location.country }}
+        </option>
+      </select>
+      <div class="toggle-btn">
+        <input type="checkbox" class="toggle" checked />
+        <p class="toggle-txt">Show Country</p>
+      </div>
+    </div>
+    <!-- <div *ngIf="showdetails" [ngClass]="showdetails ? 'show' : 'hidden'">
+      <ng-container *ngTemplateOutlet="userdetails"></ng-container>
+    </div>
+    <div *ngIf="!showdetails" [ngClass]="showdetails ? 'show' : 'hidden'">
+      <ng-container *ngTemplateOutlet="userlist"></ng-container>
+    </div> -->
+    <!-- <ng-container *ngTemplateOutlet="userlist"></ng-container> -->
+    <ng-template [ngIf]="showdetails">
+      <div class="user-list">
+        <div class="user-list-box" *ngFor="let user of paginateduser">
+          <div class="user-list-img">
+            <img [src]="user.picture.large" alt="" srcset="" />
+          </div>
+          <div class="user-details">
+            <h4>{{ user.name.first }} {{ user.name.last }}</h4>
+            <p class="address">
+              {{ user.location.street.number }} {{ user.location.street.name }}
+              {{ user.location.city }} {{ user.location.state }}
+              {{ user.location.country }}
+            </p>
+            <div class="user-mail">
+              <i class="fa fa-envelope"></i>
+              <p>{{ user.email }}</p>
+              <i class="fa fa-phone"></i>
+              <p>{{ user.phone }}</p>
+            </div>
+          </div>
+          <div class="user-view-btn">
+            <button (click)="showfulldeatils(user)">
+              <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="!showdetails">
+      <div class="user-detail-contain animate__animated animate__fadeInUp">
+        <button class="btn-back" (click)="goback()">
+          <i class="fa fa-arrow-left"></i>
+          <p>RESULTS</p>
+        </button>
+        <div class="user-detail">
+          <div class="user-detail-img">
+            <img [src]="coursedetial.picture.large" alt="" srcset="" />
+          </div>
+          <div class="detail">
+            <p class="detail-name">
+              {{ coursedetial.name.title }} {{ coursedetial.name.first }}
+              {{ coursedetial.name.last
+              }}<span class="age"> {{ coursedetial.dob.age }}</span>
+            </p>
+            <p class="detail-phone">
+              {{ coursedetial.location.street.number }}
+              {{ coursedetial.location.street.name }}
+              {{ coursedetial.location.city }}
+              {{ coursedetial.location.state }}
+              {{ coursedetial.location.country }}
+            </p>
+            <div class="add-email">
+              <i class="fa fa-envelope"></i>
+              <p>{{ coursedetial.email }}</p>
+            </div>
+            <div class="add-date">
+              <p>
+                <span>JOINED:</span>
+                {{ coursedetial.dob.date | date: "yyyy-MM-dd" }}
+              </p>
+            </div>
+            <div class="user-detail-mail">
+              <div class="user-detail-first">
+                <i class="fa fa-phone"></i>
+                <p>{{ coursedetial.cell }}</p>
+              </div>
+              <div class="user-detail-first">
+                <i class="fa fa-phone"></i>
+                <p>{{ coursedetial.phone }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <div class="download-section">
+      <button
+        class="download"
+        type="button"
+        [disabled]="!showdetails"
+        (click)="download()"
+      >
+        <i class="fa fa-cloud-download"></i>
+        <p>Download results</p>
+      </button>
+      <a id="link" href="file.csv" download hidden></a>
+      <div class="pagination">
+        <button
+          class="left"
+          type="button"
+          (click)="perviouspage(pageNumber)"
+          [disabled]="!showdetails"
+        >
+          <i class="fa fa-angle-left"></i>
+        </button>
+        <button
+          class="right"
+          type="button"
+          (click)="nextpage(pageNumber)"
+          [disabled]="!showdetails"
+        >
+          <i class="fa fa-angle-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <ng-template #userlist>
+  <div class="user-list">
+    <div class="user-list-box" *ngFor="let user of paginateduser">
+      <div class="user-list-img">
+        <img [src]="user.picture.large" alt="" srcset="" />
+      </div>
+      <div class="user-details">
+        <h4>{{ user.name.first }} {{ user.name.last }}</h4>
+        <p class="address">
+          {{ user.location.street.number }} {{ user.location.street.name }}
+          {{ user.location.city }} {{ user.location.state }}
+          {{ user.location.country }}
+        </p>
+        <div class="user-mail">
+          <i class="fa fa-envelope"></i>
+          <p>{{ user.email }}</p>
+          <i class="fa fa-phone"></i>
+          <p>{{ user.phone }}</p>
+        </div>
+      </div>
+      <div class="user-view-btn">
+        <button (click)="showfulldeatils(user)">
+          <i class="fa fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #userdetails>
+  <div class="user-detail-contain">
+    <button class="btn-back" (click)="goback()">
+      <i class="fa fa-arrow-left"></i>
+      <p>RESULTS</p>
+    </button>
+    <div class="user-detail">
+      <div class="user-detail-img">
+        <img src="https://picsum.photos/200" alt="" srcset="" />
+      </div>
+      <div class="detail">
+        <p class="detail-name">
+          Mrs. {{ coursedetial.name.first }} {{ coursedetial.name.last
+          }}<span>25</span>
+        </p>
+        <p class="detail-phone">9278 new road, kilcoole, waterford</p>
+        <div class="add-email">
+          <i class="fa fa-envelope"></i>
+          <p>brod.gibson@example.com</p>
+        </div>
+        <div class="add-date">
+          <p><span>JOINED:</span> 2002-05-21</p>
+        </div>
+        <div class="user-detail-mail">
+          <div class="user-detail-first">
+            <i class="fa fa-envelope"></i>
+            <p>7989787</p>
+          </div>
+          <div class="user-detail-first">
+            <i class="fa fa-phone"></i>
+            <p>09808980</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template> -->
+<router-outlet></router-outlet>
