@@ -316,9 +316,9 @@ button[disabled] {
 .left i {
   color: #262a41;
 }
-.left-side {
+/* .left-side {
   overflow-y: auto;
-}
+} */
 .download-section .download {
   background-color: #7946c1;
   color: #ffffff;
