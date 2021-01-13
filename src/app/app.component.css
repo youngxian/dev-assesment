@@ -27,6 +27,7 @@ button {
   top: 0px;
   left: 0px;
   right: 0px;
+  margin: auto;
 }
 
 .greeting {
@@ -93,7 +94,6 @@ button {
   justify-content: space-between;
   width: 300px;
   margin-top: 40px;
-  margin: auto;
 }
 .pink {
   padding: 20px;
@@ -141,7 +141,7 @@ i {
   width: 100%;
   margin: 10px;
   border-radius: 20px;
-  padding: 60px;
+  padding: 40px;
 }
 .show {
   display: "block";
@@ -150,7 +150,7 @@ i {
   display: none;
 }
 .left-side h1 {
-  font-size: 32px;
+  font-size: 26px;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   color: #262a41;
@@ -316,6 +316,9 @@ button[disabled] {
 .left i {
   color: #262a41;
 }
+.left-side {
+  overflow-y: auto;
+}
 .download-section .download {
   background-color: #7946c1;
   color: #ffffff;
@@ -328,7 +331,7 @@ button[disabled] {
 }
 .download p {
   margin-left: 10px;
-  font-size: 12px;
+  font-size: 10px;
 }
 .download i {
   color: #ffffff;
@@ -364,12 +367,12 @@ button[disabled] {
   margin-left: 30px;
 }
 .detail-name {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   font-family: "Poppins";
 }
 .detail-phone {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   font-family: "Poppins";
   margin-top: 20px;
@@ -503,7 +506,7 @@ button[disabled] {
   align-items: center;
 }
 .toggle-btn p {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   margin-left: 8px;
 }
