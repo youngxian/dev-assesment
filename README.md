@@ -4,7 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Open package.json file and replace  `node server.js` with `ng serve` then save the file. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Production server
+
+Run `node server.js` for produciton server using expres. Deployed to `https://dev-assessment.herokuapp.com/`.
 
 ## Code scaffolding
 
