@@ -10,11 +10,17 @@ export class ApiService {
     "Content-Type": "application/json",
     // "Access-Control-Allow-Origin": "*",
   });
-  constructor(private httpClient: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getrandomuser() {
-    return this.httpClient.get<any>(`${this.API_SERVER}/?results=10`, {
+    return this.http.get<any>(`${this.API_SERVER}/?results=10`, {
       headers: this.HttpHeaders,
     });
+  }
+  downloadFile(): any {
+    return this.http.get(
+      `${this.API_SERVER}/?results=10&inc=name,gender,nat&format=csv&noinfo`,
+      { responseType: "blob" }
+    );
   }
 }
