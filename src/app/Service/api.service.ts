@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpHeaders, HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class ApiService {
-  private API_SERVER = 'https://randomuser.me/api';
+  private API_SERVER = "https://randomuser.me/api";
   private HttpHeaders = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
+    "Content-Type": "application/json",
+    // "Access-Control-Allow-Origin": "*",
   });
   constructor(private httpClient: HttpClient) {}
 

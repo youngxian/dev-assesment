@@ -93,6 +93,7 @@ button {
   justify-content: space-between;
   width: 300px;
   margin-top: 40px;
+  margin: auto;
 }
 .pink {
   padding: 20px;
