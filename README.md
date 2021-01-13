@@ -2,14 +2,31 @@
 ![Run Python Tests](https://github.com/youngxian/dev-assesment/workflows/Run%20Python%20Tests/badge.svg)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
-## Development server
+## User Interface (UI) Web Stack (Frontend)
+- HTML
+- CSS
+- Javascript
+- Typescript
+
+## Installation and Running the Application
+
+Ensure that you have nodejs and npm installed in your computer
+a. Clone this repository into your named folder
+ `git clone -b dev https://github.com/youngxian/dev-assesment`
+ `git status`
+
+b. Modify package.json
 
 Open package.json file and replace  `node server.js` with `ng serve` then save the file. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Production server
-
-Run `node server.js` for produciton server using expres. Deployed to `https://dev-assessment.herokuapp.com/`.
-
+c. Install the project dependencies
+   `npm install`
+   
+d. start the application
+    
+    `npm start `
+    
+    
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
