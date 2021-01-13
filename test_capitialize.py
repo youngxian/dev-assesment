@@ -16,7 +16,7 @@ class MyTest(TestCase):
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument("--window-size=1280,800")
         options.add_argument('--no-sandbox')
-        options.headless = False
+        options.headless = True
     
         self.driver = webdriver.Chrome(options=options)
         self.url = "https://dev-assessment.herokuapp.com/"
