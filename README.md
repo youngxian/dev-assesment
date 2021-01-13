@@ -1,5 +1,5 @@
 # DevAssesment Site => https://dev-assessment.herokuapp.com/
-
+![Run Python Tests](https://github.com/youngxian/dev-assesment/workflows/Run%20Python%20Tests/badge.svg)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Development server
