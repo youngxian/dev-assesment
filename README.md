@@ -22,6 +22,8 @@
 ## Installation and Running the Application
 
 Ensure that you have nodejs and npm installed in your computer
+
+
 a. Clone this repository into your named folder
 
  `git clone -b dev https://github.com/youngxian/dev-assesment`
