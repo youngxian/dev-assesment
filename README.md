@@ -8,6 +8,17 @@
 - Typescript
 - python (for unittest)
 
+## Technology used
+
+- Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. ... Components define views, which are sets of screen elements that Angular can choose among and modify according to your program logic and data.
+
+- Animate.css is a library of ready-to-use, cross-browser animations for use in your web projects. Great for emphasis, home pages, sliders, and attention-guiding hints.
+
+- FileSaver.js is the solution to saving files on the client-side, and is perfect for web apps that generates files on the client
+
+- Pytest is a popular Python testing framework, primarily used for unit testing. It is open-source and the project is hosted on GitHub. pytest framework can be used to write simple unit tests as well as complex functional tests.
+
+
 ## Installation and Running the Application
 
 Ensure that you have nodejs and npm installed in your computer
