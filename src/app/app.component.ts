@@ -125,8 +125,11 @@ export class AppComponent implements OnInit {
       this.paginateduser = this.Alluser.slice(0, 3);
     } else {
       this.filteruser = item.filter(
-        (a) => a.name.first.toLowerCase() === value.toLowerCase()
+        (a) => a.name.first.toLowerCase().startsWith(value.toLowerCase())
       );
+    //  this.filteruser = item.filter(
+    //    (a) => a.name.first.toLowerCase() === value.toLowerCase()
+     // );
       this.paginateduser = this.filteruser.slice(0, 3);
     }
   }
